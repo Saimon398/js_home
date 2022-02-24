@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Необязательное задание.
+
+Необходимо реализовать функцию, которая будет принимать первым аргументом
+целое положительное число, в следующих трех аргументах функция принимает слова
+в разных склонениях.
+Функция должна возвращать одно из трех переданных в параметры слов подходящее
+под число, которое передано первым аргументом.
+
+Пример:
+console.log(declinationOfNumber(1, "яблоко", "яблока", "яблок")); // "яблоко"
+console.log(declinationOfNumber(2, "мяч", "мяча", "мячей")); // "мяча"
+console.log(declinationOfNumber(5, "стул", "стула", "стульев")); // "стульев"
+
+Функция должна работать с любым словом и любым целым положительным числом.
+Все аргументы, которые будут передаваться функции будут верны.
+-->
+<script>
+  "use strict";
+
+
+  /**
+   * 
+   * Функция меняет падеж слова в зависимости от числа
+   * @param {number} number - Число, относительно которого будет меняться падеж
+   * @param {number} case1 - Слово в именительном падеже
+   * @param {number} case2 - Слово в родительном падеже
+   * @param {number} case3 - Слово в родительном падеже (множественное число)
+   * @returns (string) rightWord - 
+   */
+  function declinationOfNumber(number, case1, case2, case3) {
+    let rightWord = null;
+    if(number === 1) {
+      rightWord = case1;
+    } else if (number > 1 && number < 5) {
+      rightWord = case2;
+    } else {
+      rightWord = case3;
+    }
+    return rightWord;
+  }
+
+  const userNumber = +prompt("Введите Ваш номер");
+  const word = declinationOfNumber(userNumber, "банан", "банана", "бананов");
+  console.log(`У вас есть ${userNumber} ${word}`);
+  
+
+</script>
+</body>
+</html>
